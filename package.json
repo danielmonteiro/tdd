@@ -1,0 +1,24 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "JS TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmonteiro/tdd.git"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "tdd"
+  ],
+  "author": "Daniel Pinho Monteiro <danielpinhomonteiro@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielmonteiro/tdd/issues"
+  },
+  "homepage": "https://github.com/danielmonteiro/tdd#readme"
+}
