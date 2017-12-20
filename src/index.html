@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="display"></div>
+</body>
+<script>
+
+  var book = {
+    title: 'Titulo',
+    tags: ['tag1', 'tag2', 'tag3']
+  }
+
+  var display = document.getElementById("display");
+
+  display.innerHTML = `
+    <h1>${book.title}</h1>
+    <ul>
+      ${book.tags.map(tag => `<li>${tag}</li>`).join('')}
+    </ul>
+  `;
+/*
+  var obj = {
+    name: 'Nome',
+    number: 'Número',
+    social: {
+      facebook: 'Facebook',
+      twitter: 'Twitter'
+    }
+  }
+
+  var { name, number, facebook } = obj;
+
+  console.log(name);
+  console.log(number);
+  console.log(facebook);
+
+  var { facebook, twitter } = obj.social;
+  console.log(facebook);
+  console.log(twitter);
+
+
+  var a = 1;
+  var b = 2;
+
+  console.log("a: ", a);
+  console.log("b: ", b);
+
+  [a, b] = [b, a];
+
+  console.log("a: ", a);
+  console.log("b: ", b);
+
+
+  var front = ['angular', 'react'];
+  var back = ['nodejs', 'java', 'php'];
+
+  var full = [...front, 'vue', ...back];
+
+  console.log(full);
+
+  var promisse = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+      if(false){
+        resolve('OK');
+      } else {
+        reject('ERROR');
+      }
+    }, 2000);
+
+  });
+
+  promisse
+    .then(
+      (data) => console.log('then', data)
+    )
+    .catch(
+      (err) => console.log('catch', err)
+    );
+
+  var posts = fetch("https://willianjusten.com.br/search.json");
+
+  posts
+    .then(
+      (data) => {
+        let json = data.json();
+        return json;
+      }
+    )
+    .then(
+      (data) => console.log(data)
+    )
+    .catch(
+      (err) => console.log(err)
+    );
+*/
+
+  var promise1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: 'Promise 1 resolved' });
+    }, 1000);
+  });
+
+  var promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ data: 'Promise 2 resolved' });
+    }, 2000);
+  });
+
+  Promise
+    .all([promise2, promise1])
+    .then((results) => {
+      console.log('All', results);
+    });
+
+  Promise
+    .race([promise1, promise2])
+    .then(
+      (results) => {
+        console.log('Race', results);
+      }
+    );
+
+</script>
+</html>

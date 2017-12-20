@@ -1,7 +1,7 @@
 const a = 0;
 
 function sum() {
-  return a +a;
+  return a + a;
 }
 
 sum();
